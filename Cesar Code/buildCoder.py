@@ -10,13 +10,12 @@ def buildCoder(shift):
     """
 
     assert (type(shift) == int and 0 <= shift and shift <= 26)
-
     coder = {}
-
-    coder.
-
-    print type(string.ascii_lowercase)
-
+    element = 1
+    for i in range((0 - shift, 26 - shift):
+        coder[element] = string.ascii_uppercase[i]
+        
+    return coder
 
 
     ### TODO 

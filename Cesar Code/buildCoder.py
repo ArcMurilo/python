@@ -1,7 +1,6 @@
+import string
 class CesarCode(object):
-	import string
-
-	def buildCoder(shift):
+	def buildCoder(self, shift):
 	    """
 	    Returns a dict that can apply a Caesar cipher to a letter.
 	    The cipher is defined by the shift value. Ignores non-letter characters
@@ -28,7 +27,7 @@ class CesarCode(object):
 
 	    return coder
 
-	def alfabeto():
+	def alfabeto(self):
 	    coder = {}
 	    element = 1
 	    for i in range(26):
@@ -39,8 +38,8 @@ class CesarCode(object):
 	        element += 1
 	    return coder
 
-	def applyCoder(text, coder):
-		alf = alfabeto()
+	def applyCoder(self, text, coder):
+		alf = self.alfabeto()
 		textEncoded = ''
 
 		for letter in text:
@@ -50,3 +49,10 @@ class CesarCode(object):
 			textEncoded += coder[alf[letter]]
 
 		return textEncoded
+
+	def applyShift(self, text, shift):
+		txt = self.applyCoder(text, self.buildCoder(shift))
+		return txt
+
+codex = CesarCode()
+print codex.applyShift('Murilo', 3)
